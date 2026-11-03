@@ -1,0 +1,22 @@
+:root { --paper: #f1efe8; --ink: #15140f; --dim: #a39e92; --rust: #a3332b; }
+* { box-sizing: border-box; }
+html, body { height: 100%; margin: 0; color: var(--ink); background: var(--paper); }
+body { font: 15px/1.6 "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+#term { height: 100dvh; overflow-y: auto; padding: 58px max(20px, calc(50% - 42ch)) 80px; }
+.ln { white-space: pre-wrap; overflow-wrap: anywhere; }
+.m { color: var(--dim); }
+.rule { margin-top: 38px; }
+.in { margin: 6px 0 12px; padding-left: 14px; border-left: 2px solid var(--dim); }
+.hd { margin-top: 18px; font-weight: 600; letter-spacing: .04em; }
+.body { margin: 2px 0 6px; }
+.think { margin: 8px 0; font-size: 13px; color: #c9c4b8; }
+[data-g] { position: relative; padding-left: 2.4ch; } [data-g]::before { content: attr(data-g); position: absolute; left: 0; color: var(--rust); }
+.ln mark { color: inherit; background: rgba(247, 217, 69, 0.306); }
+.chg mark { color: inherit; background: rgba(163, 51, 43, .16); border-bottom: 1px solid var(--rust); }
+.add { background: rgba(163, 51, 43, .1); } .del { color: var(--dim); text-decoration: line-through; }
+.pat { margin: 10px 0 16px; } .pat canvas { display: block; max-width: 100%; border: 1px solid #d8d4c8; } .pat figcaption { margin-top: 4px; font-size: 12px; }
+.cur { animation: blink 1s steps(1) infinite; } @keyframes blink { 50% { opacity: 0; } }
+.bar { position: fixed; z-index: 2; top: 0; left: 0; right: 0; display: flex; justify-content: space-between; padding: 14px 22px 22px; font-size: 12px; background: linear-gradient(var(--paper) 55%, transparent); pointer-events: none; }
+#keys { position: fixed; right: 22px; bottom: 14px; font-size: 12px; }
+.paused #keys::before { content: "paused · "; color: var(--rust); }
+::selection { background: rgba(163, 51, 43, .2); }
